@@ -1,0 +1,94 @@
+header {
+    background-color:rgb(5, 89, 163);
+    text-align: center;
+    padding: 20px;
+    text-shadow: 10px;
+    font-size: 30pt;
+    color:darkturquoise;
+}
+
+
+body {
+    background-image: url("Pictures/outerspace-58.gif");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+h1 {
+    color: aliceblue;
+    text-align: center;
+}
+#User {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:cadetblue;
+    text-shadow: 10px;
+    font-size: 25pt;
+}
+
+.Scores {
+    text-align: center;
+}
+
+#Computer {
+    color:maroon;
+    text-shadow: 10px;
+    font-size: 25pt;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#userscore {
+    font-family: 'Times New Roman', Times, serif;
+    color:aliceblue;
+}
+
+#computerscore {
+    font-family: 'Times New Roman', Times, serif;
+    color:aliceblue;
+}
+
+main { 
+    padding: 1px 20px 20px 20px;
+    display: block; 
+}
+
+#userscore {
+    font-size: 25pt;
+}
+
+#computerscore {
+    font-size: 25pt;
+}
+
+.result{
+    text-align: center;
+    color:aqua;
+    font-size: 20pt;
+}
+
+.choices {text-align: center; background-color: navy;}
+
+.choice { display:inline; height:100px; width:100px; position:absolute}
+
+img {
+    width: auto; 
+    max-height: 100%; 
+ }
+
+#rock {margin-left:-50px;}
+
+#paper {margin-top: 100px; margin-left: 150px}
+
+#scissors {margin-top: 250px;margin-left: 50px}
+
+#lizard {margin-top: 250px; margin-left: -150px}
+
+#spock {margin-top: 100px; margin-left: -220px}
+
+#wrapper{
+    height:100%;
+    width:80%;
+    margin-right:auto;
+    margin-left:auto;
+    background-color:navy;
+    overflow: hidden;
+}
