@@ -1,4 +1,5 @@
-header {
+header 
+{
     background-color:rgb(5, 89, 163);
     text-align: center;
     padding: 20px;
@@ -8,87 +9,149 @@ header {
 }
 
 
-body {
+body 
+{
     background-image: url("Pictures/outerspace-58.gif");
     background-repeat: no-repeat;
     background-size:cover;
 }
 
-h1 {
+h1 
+{
     color: aliceblue;
     text-align: center;
 }
-#User {
+#User 
+{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color:cadetblue;
     text-shadow: 10px;
     font-size: 25pt;
 }
 
-.Scores {
+.Scores 
+{
     text-align: center;
 }
 
-#Computer {
+#Computer 
+{
     color:maroon;
     text-shadow: 10px;
     font-size: 25pt;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-#userscore {
+#userscore 
+{
     font-family: 'Times New Roman', Times, serif;
     color:aliceblue;
 }
 
-#computerscore {
+#computerscore 
+{
     font-family: 'Times New Roman', Times, serif;
     color:aliceblue;
 }
 
-main { 
+main 
+{ 
     padding: 1px 20px 20px 20px;
     display: block; 
 }
 
-#userscore {
+#userscore 
+{
     font-size: 25pt;
 }
 
-#computerscore {
+#computerscore 
+{
     font-size: 25pt;
 }
 
-.result{
+.result
+{
     text-align: center;
     color:aqua;
     font-size: 20pt;
 }
 
-.choices {text-align: center; background-color: navy;}
+.choices 
+{
+    text-align: center; 
+    background-color: navy;
+    height:320px;
+}
 
-.choice { display:inline; height:100px; width:100px; position:absolute}
+.choice 
+{ 
+    display:inline; 
+    height:80px; 
+    width:80px; 
+    position:absolute; 
+    cursor:pointer
+}
 
-img {
+img 
+{
     width: auto; 
     max-height: 100%; 
- }
+}
 
-#rock {margin-left:-50px;}
+#rock 
+{
+    margin-left:-50px;
+}
 
-#paper {margin-top: 100px; margin-left: 150px}
+#paper 
+{
+    margin-top: 100px; 
+    margin-left: 150px
+}
 
-#scissors {margin-top: 250px;margin-left: 50px}
+#scissors 
+{
+    margin-top: 250px;
+    margin-left: 50px
+}
 
-#lizard {margin-top: 250px; margin-left: -150px}
+#lizard 
+{
+    margin-top: 250px; 
+    margin-left: -150px
+}
 
-#spock {margin-top: 100px; margin-left: -220px}
+#spock 
+{
+    margin-top: 100px; 
+    margin-left: -220px
+}
 
-#wrapper{
+#wrapper
+{
     height:100%;
     width:80%;
     margin-right:auto;
     margin-left:auto;
     background-color:navy;
     overflow: hidden;
+}
+
+.resetBtn
+{
+    color:darkblue;
+    cursor: pointer;
+    width:100px;
+    height: 50px;
+    position: absolute;
+    top: 450px;
+    right:610px;
+    font-size: 20pt;
+    font-weight: bolder;
+    background-color: aqua;
+    border: 5px solid purple;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 black;
+    visibility: hidden;
 }

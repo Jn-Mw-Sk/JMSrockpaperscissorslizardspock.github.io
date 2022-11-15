@@ -11,20 +11,24 @@ var scissor_div = document.getElementById("scissors");
 var lizard_div = document.getElementById("lizard");
 var spock_div = document.getElementById("spock");
 var announcer = document.getElementById("announcer");
+const resetButton = document.getElementById("reset");
 
 // Game Code
-function getCompChoice(){
+function getCompChoice()
+{
     var choices = ["rock", "paper", "scissors", "lizard", "spock"];
     var index = Math.floor(Math.random()*5);
     return choices[index];
   }
 
-function game(userChoice){
+function game(userChoice)
+{
     if(userScore < 10 && computerScore < 10)
     {
         var compChoice = getCompChoice();
 
-        switch(userChoice + compChoice){
+        switch(userChoice + compChoice)
+        {
             case "rockscissors":
             case "paperrock":
             case "scissorspaper":
@@ -62,10 +66,12 @@ function game(userChoice){
 
 }
 
-function win(userChoice, compChoice){
+function win(userChoice, compChoice)
+{
     userScore++;
     userScore_span.innerHTML = userScore;
-    if(userChoice === "rock"){
+    if(userChoice === "rock")
+    {
         if(compChoice === "scissors")
         {
             result_p.innerHTML= "Rock crushes Scissors! You Win!";
@@ -75,7 +81,8 @@ function win(userChoice, compChoice){
             result_p.innerHTML = "Rock crushes Lizard! You win!";
         }
     }
-    if(userChoice === "paper"){
+    if(userChoice === "paper")
+    {
         if(compChoice === "rock")
         {
             result_p.innerHTML = "Paper covers Rock! You Win!";
@@ -85,7 +92,8 @@ function win(userChoice, compChoice){
             result_p.innerHTML = "Paper disproves Spock! You Win!";
         }
     }
-    if(userChoice === "scissors"){
+    if(userChoice === "scissors")
+    {
         if(compChoice === "paper")
         {
             result_p.innerHTML= "Scissors cuts Paper! You Win!";
@@ -95,7 +103,8 @@ function win(userChoice, compChoice){
             result_p.innerHTML = "Scissors decapitates Lizard! You Win!";
         }
     }
-    if(userChoice === "lizard"){
+    if(userChoice === "lizard")
+    {
         if(compChoice === "paper")
         {
             result_p.innerHTML = "Lizard eats Paper! You Win!";
@@ -105,7 +114,8 @@ function win(userChoice, compChoice){
             result_p.innerHTML = "Lizard poisons Spock! You Win!";
         }
     }
-    if(userChoice === "spock"){
+    if(userChoice === "spock")
+    {
         if(compChoice === "rock")
         {
             result_p.innerHTML = "Spock vaporizes Rock! You Win!";
@@ -118,10 +128,12 @@ function win(userChoice, compChoice){
     checkScores();
 }
 
-function lose(userChoice, compChoice){
+function lose(userChoice, compChoice)
+{
     computerScore++;
     compScore_span.innerHTML = computerScore;
-    if(compChoice === "rock"){
+    if(compChoice === "rock")
+    {
         if(userChoice === "scissors")
         {
             result_p.innerHTML= "Rock crushes Scissors! You Lose!";
@@ -131,7 +143,8 @@ function lose(userChoice, compChoice){
             result_p.innerHTML = "Rock crushes Lizard! You Lose!!";
         }
     }
-    if(compChoice === "paper"){
+    if(compChoice === "paper")
+    {
         if(userChoice === "rock")
         {
             result_p.innerHTML = "Paper covers Rock! You Lose!";
@@ -141,7 +154,8 @@ function lose(userChoice, compChoice){
             result_p.innerHTML = "Paper disproves Spock! You Lose!";
         }
     }
-    if(compChoice === "scissors"){
+    if(compChoice === "scissors")
+    {
         if(userChoice === "paper")
         {
             result_p.innerHTML= "Scissors cuts Paper! You Lose!";
@@ -151,7 +165,8 @@ function lose(userChoice, compChoice){
             result_p.innerHTML = "Scissors decapitates Lizard! You Lose!";
         }
     }
-    if(compChoice === "lizard"){
+    if(compChoice === "lizard")
+    {
         if(userChoice === "paper")
         {
             result_p.innerHTML = "Lizard eats Paper! You Lose!";
@@ -161,7 +176,8 @@ function lose(userChoice, compChoice){
             result_p.innerHTML = "Lizard poisons Spock! You Lose!";
         }
     }
-    if(compChoice === "spock"){
+    if(compChoice === "spock")
+    {
         if(userChoice === "rock")
         {
             result_p.innerHTML = "Spock vaporizes Rock! You Lose!";
@@ -174,22 +190,26 @@ function lose(userChoice, compChoice){
     checkScores();
 }
 
-function draw(){
+function draw()
+{
     result_p.innerHTML = "This is a draw! Choose again!"
 }
 
-function checkScores(){
+function checkScores()
+{
 
     if(userScore == 10)
     {
         announcer.innerHTML = "User has reached 10 points! User wins!";
         result_p.innerHTML = "The game is over!"
+        document.getElementById("reset").style.visibility = "visible";
         return;
     }
     if(computerScore == 10)
     {
         announcer.innerHTML = "Computer has reached 10 points! Computer Wins!"
         result_p.innerHTML = "The game is over!"
+        document.getElementById("reset").style.visibility = "visible";
         return;
     }
     if(userScore > computerScore )
@@ -207,6 +227,19 @@ function checkScores(){
     {
         announcer.innerHTML = "This is it, the deciding play!"
     }
+    return;
+}
+
+function resetScores()
+{
+    userScore = 0;
+    computerScore = 0;
+    userScore_span.innerHTML = userScore;
+    compScore_span.innerHTML = computerScore;
+    document.getElementById("reset").style.visibility = "hidden";
+    result_p.innerHTML = "Make your move!";
+    announcer.innerHTML = "This could be anyone's game!"; 
+    return;
 }
 
 var f1 = function() {game("rock");}
@@ -220,4 +253,4 @@ paper_div.addEventListener("click", f2);
 scissor_div.addEventListener("click", f3);
 lizard_div.addEventListener("click", f4);
 spock_div.addEventListener("click", f5);
-
+resetButton.addEventListener("click", resetScores);
